@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 # We will import our actual logic routes later when we build Phase 4
-# from api.endpoints import router as kyc_router
+from api.endpoints import router as kyc_router
 
 # Initialize the FastAPI application
 app = FastAPI(
@@ -57,4 +57,4 @@ async def root_health_check():
 # Route Registration (Placeholder)
 # ==========================================
 # Once we build the api/endpoints.py file, we will connect it to the server here:
-# app.include_router(kyc_router, prefix="/api/v1")
+app.include_router(kyc_router, prefix="/api/v1")
